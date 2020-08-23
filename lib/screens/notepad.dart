@@ -11,6 +11,7 @@ class _NotepadScreenState extends State<NotepadScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        backgroundColor: Colors.lightBlueAccent,
         title: Container(
           alignment: Alignment.centerRight,
           child: Text(
@@ -39,7 +40,8 @@ class _NotepadScreenState extends State<NotepadScreen> {
         ],
       ),
       body: Padding(
-        padding: const EdgeInsets.all(20.0),
+        padding:
+            const EdgeInsets.only(top: 10.0, left: 20, right: 20, bottom: 0),
         child: Column(
           children: [
             TextField(
@@ -55,20 +57,29 @@ class _NotepadScreenState extends State<NotepadScreen> {
               autofocus: true,
               keyboardType: TextInputType.multiline,
             ),
-            TextField(
-              decoration: InputDecoration(
-                hintText: "Notes",
-                border: InputBorder.none,
+            Expanded(
+              child: TextField(
+                decoration: InputDecoration(
+                  hintText: "Notes",
+                  border: InputBorder.none,
+                ),
+                scrollPadding: EdgeInsets.all(20.0),
+                autofocus: true,
+                maxLines: 999999,
+                keyboardType: TextInputType.multiline,
               ),
-              scrollPadding: EdgeInsets.all(20.0),
-              autofocus: true,
-              maxLines: 999999,
-              keyboardType: TextInputType.multiline,
             ),
           ],
         ),
       ),
       resizeToAvoidBottomPadding: true,
+      bottomNavigationBar: BottomAppBar(
+        shape: CircularNotchedRectangle(),
+        child: Container(
+          color: Colors.lightBlueAccent,
+          height: 60,
+        ),
+      ),
     );
   }
 }
