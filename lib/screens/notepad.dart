@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/rendering.dart';
 
 class NotepadScreen extends StatefulWidget {
   @override
@@ -19,12 +20,55 @@ class _NotepadScreenState extends State<NotepadScreen> {
             ),
           ),
         ),
+        leading: Icon(
+          Icons.text_fields,
+        ),
         actions: [
-          PopupMenuButton(itemBuilder: (BuildContext context) {
-            return null;
-          })
+          IconButton(
+            icon: Icon(
+              Icons.attach_file,
+              color: Colors.white,
+            ),
+            onPressed: () {},
+          ),
+          PopupMenuButton(
+            itemBuilder: (BuildContext context) {
+              return null;
+            },
+          ),
         ],
       ),
+      body: Padding(
+        padding: const EdgeInsets.all(20.0),
+        child: Column(
+          children: [
+            TextField(
+              style: TextStyle(
+                fontSize: 20,
+                fontWeight: FontWeight.bold,
+                color: Colors.black,
+              ),
+              decoration: InputDecoration(
+                hintText: "Title",
+                border: InputBorder.none,
+              ),
+              autofocus: true,
+              keyboardType: TextInputType.multiline,
+            ),
+            TextField(
+              decoration: InputDecoration(
+                hintText: "Notes",
+                border: InputBorder.none,
+              ),
+              scrollPadding: EdgeInsets.all(20.0),
+              autofocus: true,
+              maxLines: 999999,
+              keyboardType: TextInputType.multiline,
+            ),
+          ],
+        ),
+      ),
+      resizeToAvoidBottomPadding: true,
     );
   }
 }
