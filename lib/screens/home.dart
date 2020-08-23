@@ -85,6 +85,14 @@ class _HomeScreenLayoutState extends State<HomeScreenLayout> {
           ],
         ),
       ),
+      // Bottom navigation ------------------>>>>>>>>>>>>>>>>
+      bottomNavigationBar: BottomAppBar(
+        shape: CircularNotchedRectangle(),
+        child: Container(
+          height: 50.0,
+        ),
+        color: Colors.lightBlueAccent,
+      ),
       //Floating action button --------------->>>>>>>>>>>>>>>>
       floatingActionButton: FloatingActionButton(
         onPressed: () {
@@ -100,6 +108,7 @@ class _HomeScreenLayoutState extends State<HomeScreenLayout> {
           Icons.add,
         ),
       ),
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
     );
   }
 }
