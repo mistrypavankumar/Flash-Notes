@@ -96,7 +96,7 @@ class _HomeScreenLayoutState extends State<HomeScreenLayout> {
       //Floating action button --------------->>>>>>>>>>>>>>>>
       floatingActionButton: FloatingActionButton(
         onPressed: () {
-          Navigator.pushReplacement(
+          Navigator.push(
             context,
             MaterialPageRoute(
               builder: (context) => NotepadScreen(),
